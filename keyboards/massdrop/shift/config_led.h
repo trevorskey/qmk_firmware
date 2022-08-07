@@ -239,16 +239,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  { .id = 169, .x = 11.537, .y = 4.383, .adr = { .drv = 2, .cs = 3,  .swr = 5,  .swg = 4,  .swb = 6  }, .scan = 253 } \
 };
 
-//#define USB_LED_INDICATOR_ENABLE    //Comment out to disable indicator functionality
+#define USB_LED_INDICATOR_ENABLE    //Comment out to disable indicator functionality
+// This is used to SET a color for indicator LEDs when what they indicate is on
+// The indicator LED scan code is defined as 253, why don't we use LED_INDICATOR_SCAN here and above?
 #ifdef USB_LED_INDICATOR_ENABLE     //Scan codes refer to actual key matrix codes, not KC_*
-    #define USB_LED_NUM_LOCK_SCANCODE       41
-    #define USB_LED_CAPS_LOCK_SCANCODE      48
-    //#define USB_LED_SCROLL_LOCK_SCANCODE    255
+    #define USB_LED_NUM_LOCK_SCANCODE       253
+    #define USB_LED_CAPS_LOCK_SCANCODE      253
+    #define USB_LED_SCROLL_LOCK_SCANCODE    253
     //#define USB_LED_COMPOSE_SCANCODE        255
     //#define USB_LED_KANA_SCANCODE           255
 #endif //USB_LED_INDICATOR_ENABLE
 
 #define DEDICATED_LED_INDICATOR_ENABLE
+// This is used to TURN OFF indicator LEDs when the thing they indicate is off
 #ifdef DEDICATED_LED_INDICATOR_ENABLE     // LEDID refers to .id field in struct above
     #define USB_LED_NUM_LOCK_LEDID       167
     #define USB_LED_CAPS_LOCK_LEDID      168

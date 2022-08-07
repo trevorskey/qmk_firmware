@@ -379,9 +379,12 @@ static void md_led_matrix_indicators(void)
 			// Dedicated LEDs (Could be done more efficiently - meh)
             (0)))
             {
-                led_buffer[i].r = 255 - led_buffer[i].r;
-                led_buffer[i].g = 255 - led_buffer[i].g;
-                led_buffer[i].b = 255 - led_buffer[i].b;
+                //led_buffer[i].r = 255 - led_buffer[i].r;
+                //led_buffer[i].g = 255 - led_buffer[i].g;
+                //led_buffer[i].b = 255 - led_buffer[i].b;
+                led_buffer[i].r = 255;
+                led_buffer[i].g = 0;
+                led_buffer[i].b = 0;
             }
 #endif
 #ifdef DEDICATED_LED_INDICATOR_ENABLE
