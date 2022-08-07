@@ -9,6 +9,29 @@
 
 This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the [Clueboard product line](https://clueboard.co).
 
+## Fork Notes
+
+This is a fork of the official repository _and_ the MassDrop repository for the express purpose of fixing issues with the MassDrop Shift keyboard.
+
+At present, support for the MassDrop Shift keyboard is only present in the MassDrop repository, and that is based on a very old version of QMK. The default branch of this fork is currently based on this one working repository.
+
+### Disclaimers
+
+* I am but one man, and I have a day job. I also have much to learn about this codebase. So work here will be slow. That said, I also use this keyboard for my day job. So annoyances are more likely to be dealt with swiftly.
+* The Drop Shift keyboard is my only programmable keyboard, so I won't be making updates/fixes with other keyboards in mind yet.
+* I have thus far never used the online configurator tool, so all of my initial updates will not have this in mind. Eventually I do plan to make sure my changes work with the configurator tools.
+
+### Priorities
+
+These are the items I currently have on my list to fix or update.
+
+* The LED indicators are not separate from the whole keyboard LED effects, causing them to disappear. [FIXED]
+  * Setting the indicator color should be possible in the keymap config.
+* Scroll Lock doesn't seem to work, not even for the indicator LED.
+* Fix the USB so the keyboard is compatible with my KVM switch.
+* Add a visual countdown when pressing the DFU mode button.
+
+
 ## Documentation
 
 * [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
